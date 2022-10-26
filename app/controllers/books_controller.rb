@@ -5,6 +5,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @user=@book.user
     @books = Book.new#投稿フォームで追加
+    @book_comment=BookComment.new
   end
 
   def index

@@ -36,8 +36,32 @@
      <% end %></td>
 <!--ここまで-->
 
+
         </tr>
       </table>
+
+      <!--コメント-->
+<div>
+  <p>コメント件数：<%= @book.book_comments.count %></p>
+  <div class = "comments">
+  <% @book.book_comments.each do |book_comment| %>
+    <%= book_comment.comment %>
+    <%= book_comment.user.name %>
+    <% if book_comment.user == current_user %>
+　  　<%= link_to '削除',book_book_comment_path(@book,book_comment),method: :delete,date: [confirm:'削除してもよろしいですか？'] %>
+   <% end %><br>
+  <% end %>
+  </div>
+</div>
+<div class = "new-comment">
+  <%= form_with model: [@book, @book_comment], local: true do |f| %>
+    <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
+    <%= f.submit "送信する" %>
+  <% end %>
+</div>
+
+
     </div>
   </div>
 </div>
+
