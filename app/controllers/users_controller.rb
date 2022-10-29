@@ -28,16 +28,6 @@ class UsersController < ApplicationController
     end
   end
 
-  #def follows
-    #user = User.find(params[:id])
-    #@users = user.following_user.page(params[:page]).per(3).reverse_order
-  #end
-
-  #def followers
-  #  user = User.find(params[:id])
-    #@users = user.follower_user.page(params[:page]).per(3).reverse_order
-  #end
-
   private
 
   def user_params
@@ -50,10 +40,6 @@ class UsersController < ApplicationController
       redirect_to user_path(current_user)
     end
   end
-
- # def set_user#フォロー機能
- #   @user = User.find(params[:id])
-#end
 
 
 end
