@@ -38,13 +38,10 @@
       <!--コメント一覧部分-->
 <!--divタグのclassをid="comments_area"に変更-->
      <div id="comment_form">
-     <%= render 'book_comments/post_comments', book: @book %>
+     <%= render 'book_comments/post_comments', book: @book, book_comment: @book_comment %>
      </div>
 
-    <!--コメントフォーム-->
-      <div id="comment_index">
-     <%= render 'book_comments/form', book: @book, book_comment: @book_comment %>
-     </div>
+
 
 
     </div>

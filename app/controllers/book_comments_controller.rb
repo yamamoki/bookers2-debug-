@@ -6,7 +6,7 @@ class BookCommentsController < ApplicationController
     @comment.user_id = current_user.id
     @comment.book_id = @book.id
     if @comment.save
-    render :book_comment
+    render :book_comments
     end
   end
 
