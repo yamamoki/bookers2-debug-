@@ -1,6 +1,8 @@
 class Book < ApplicationRecord
   has_one_attached :image#追加
   belongs_to :user
+  
+  has_many :view_counts, dependent: :destroy #閲覧カウント
 
   has_many :book_comments,dependent: :destroy#コメント
   has_many :favorites, dependent: :destroy#いいね追加

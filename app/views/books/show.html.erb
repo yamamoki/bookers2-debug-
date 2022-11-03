@@ -28,6 +28,10 @@
       <td id="favorite_buttons_<%= @book.id %>">
 　　　<%= render "favorites/favorite", book: @book %>
       </td>
+
+      <!--閲覧カウント-->
+     <td><p class="view-count">閲覧数: <%= @book_detail.view_counts.count %></p></td>
+
 <!--ここまで-->
 
 
@@ -42,9 +46,8 @@
      </div>
 
      <div class="new-comment">
-       <%= render 'book_comments/form',book: @book, book_comment: @book_comment %>  
+       <%= render 'book_comments/form',book: @book, book_comment: @book_comment %>
       </div>
-
 
     </div>
   </div>
