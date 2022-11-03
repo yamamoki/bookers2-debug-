@@ -22,7 +22,14 @@
 </table>
 
  <td>
-   <%= render 'relationships/follobutton', user: user %></td>
+   <%= render 'relationships/follobutton', user: user %>
+
+   <% if current_user != user && current_user.following?(user) && user.following?(current_user) %>
+    <%= link_to 'chatを始める', chat_path(user.id), class: "ml-3" %>
+   <% end %>
+  </td>
+
+
 
 <div class='row'>
   <% if user == current_user %>
